@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="pl.edu.pwr.maczkowiak.lab1.bmicalculator.MainActivity"
+    android:padding="20dp">
+
+    <Button
+        android:id="@+id/button_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/count_button"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:theme="@style/Button"
+        style="@style/Widget.AppCompat.Button.Borderless"/>
+
+
+
+    <EditText
+        android:id="@+id/mass_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="57dp"
+        android:ems="7"
+        android:textAlignment="textEnd"
+        android:inputType="numberDecimal"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/button_count" />
+
+    <EditText
+        android:id="@+id/height_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="26dp"
+        android:ems="7"
+        android:textAlignment="textEnd"
+        android:inputType="numberDecimal"
+        android:layout_below="@+id/mass_edit"
+        android:layout_alignStart="@+id/button_count" />
+
+    <TextView
+        android:id="@+id/mass_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/mass_text"
+        android:textSize="20dp"
+        android:layout_alignBaseline="@+id/mass_edit"
+        android:layout_toStartOf="@+id/mass_edit"
+        android:layout_marginEnd="34dp" />
+
+    <TextView
+        android:id="@+id/height_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/height_text"
+        android:textSize="20dp"
+        android:layout_alignBaseline="@+id/height_edit"
+        android:layout_alignEnd="@+id/mass_text" />
+
+    <Switch
+        android:id="@+id/switch_units"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="false"
+        android:showText="true"
+        android:textOff="@string/metric_units"
+        android:textOn="@string/imperial_units"
+        android:thumbTint="@color/white"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:id="@+id/value_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/button_count"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="160dp"
+        android:textAlignment="center"
+        android:textSize="30dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/bmi_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/button_count"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="110dp"
+        android:textAlignment="center"
+        android:textSize="25dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/help"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/share"
+        android:src="@drawable/ic_share_black_24_2dp"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:theme="@style/Button"
+        />
+
+
+
+</RelativeLayout>

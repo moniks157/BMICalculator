@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    android:layout_weight="4">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="2">
+
+        <Switch
+            android:id="@+id/switch_units"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:showText="true"
+            android:textOff="@string/metric_units"
+            android:textOn="@string/imperial_units"
+            android:thumbTint="@color/white" />
+
+
+        <EditText
+            android:id="@+id/mass_edit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="23dp"
+            android:layout_marginTop="32dp"
+            android:layout_toEndOf="@+id/mass_text"
+            android:ems="7"
+
+            android:inputType="numberDecimal"
+            android:textAlignment="textEnd" />
+
+        <EditText
+            android:id="@+id/height_edit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/mass_edit"
+            android:layout_below="@+id/mass_edit"
+            android:layout_marginTop="32dp"
+            android:ems="7"
+            android:inputType="numberDecimal"
+            android:textAlignment="textEnd" />
+
+        <TextView
+            android:id="@+id/mass_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/mass_edit"
+            android:layout_alignBottom="@+id/mass_edit"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="35dp"
+            android:text="@string/mass_text"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/height_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/height_edit"
+            android:layout_alignBottom="@+id/height_edit"
+            android:layout_alignEnd="@+id/mass_text"
+            android:text="@string/height_text"
+            android:textSize="20dp" />
+
+        <ImageButton
+            android:id="@+id/share"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_share_black_24dp"
+            android:theme="@style/Button"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true" />
+
+
+
+        <Button
+            android:id="@+id/button_count"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/count_button"
+            android:theme="@style/Button"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_weight="2">
+
+
+        <TextView
+            android:id="@+id/value_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/help"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="13dp"
+            android:textAlignment="center"
+            android:textSize="30dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/bmi_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/help"
+            android:layout_centerHorizontal="true"
+            android:textAlignment="center"
+            android:textSize="30dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/help"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true" />
+
+    </RelativeLayout>
+
+
+
+</LinearLayout>

@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">BMI Calculator</string>
+    <string name="height_text">Height</string>
+    <string name="mass_text">Mass</string>
+    <string name="count_button">Count</string>
+    <string name="error_message">Wrong Input</string>
+    <string name="metric_units">kg/m</string>
+    <string name="imperial_units">lb/in</string>
+    <string name="overweight_message">Overweight</string>
+    <string name="obesity_message">Obesity</string>
+    <string name="underweight_message">Underweight</string>
+    <string name="normal_message">Normal</string>
+    <string name="kilograms">kg</string>
+    <string name="meter">m</string>
+    <string name="pound">lb</string>
+    <string name="inch">in</string>
+    <string name="author_label">About Author</string>
+    <string name="share">Share</string>
+    <string name="save">Save</string>
+    <string name="share_message">Hi! Check out my BMI. It\'s </string>
+    <string name="author_name">Hi! My name is Monika Maczkowiak</string>
+    <string name="author_cause">I made this app \'cause I had to :P</string>
+    <string name="author_index">My index: 228024</string>
+    <string name="smile"> :)</string>
+</resources>
