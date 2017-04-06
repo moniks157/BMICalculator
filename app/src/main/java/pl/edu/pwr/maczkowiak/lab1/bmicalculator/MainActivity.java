@@ -48,7 +48,6 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.value_text) TextView value_text;
     @BindView(R.id.bmi_text) TextView bmi_text;
 
-   // @BindView(R.id.save) MenuItem save;
     @BindView(R.id.share) ImageButton share_button;
 
     @BindColor(R.color.red) int red;
@@ -56,10 +55,17 @@ public class MainActivity extends AppCompatActivity {
     @BindColor(R.color.orange) int orange;
     @BindColor(R.color.yellow) int yellow;
     @BindColor(R.color.green) int green;
-    @BindColor(R.color.violet) int violet;
 
     @BindString(R.string.share_message) String share_message;
     @BindString(R.string.smile) String smile;
+    @BindString(R.string.obesity_message) String obesity;
+    @BindString(R.string.overweight_message) String overweight;
+    @BindString(R.string.underweight_message) String underweight;
+    @BindString(R.string.normal_message) String normal;
+    @BindString(R.string.pound) String pounds;
+    @BindString(R.string.kilograms) String kilograms;
+    @BindString(R.string.meter) String meters;
+    @BindString(R.string.inch) String inches;
 
     PopupWindow pw;
     private SharedPreferences preferences;
@@ -76,10 +82,7 @@ public class MainActivity extends AppCompatActivity {
 
         restore();
 
-        //enableSave();
-
         changeShare();
-
 
     }
 
@@ -133,7 +136,6 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        //enableSave();
         switch (item.getItemId()) {
             case R.id.author:
                 Intent intent = new Intent(this, AboutAuthorActivity.class);
@@ -166,17 +168,6 @@ public class MainActivity extends AppCompatActivity {
 
         changeShare();
 
-    }
-
-    public void enableSave(){
-        MenuItem save = (MenuItem) findViewById(R.id.save);
-        if((height_edit.getText().toString().matches(("")) || mass_edit.getText().toString().matches(""))
-                && bmi_text.getText().toString().matches("")){
-            save.setEnabled(false);
-        }
-        else{
-            save.setEnabled(true);
-        }
     }
 
     public void changeShare(){
@@ -218,12 +209,12 @@ public class MainActivity extends AppCompatActivity {
     @OnClick(R.id.switch_units)
     public void SwitchChange(){
         if(switch_units.isChecked()){
-            mass_edit.setHint(R.string.pound);
-            height_edit.setHint(R.string.inch);
+            mass_edit.setHint(pounds);
+            height_edit.setHint(inches);
         }
         else{
-            mass_edit.setHint(R.string.kilograms);
-            height_edit.setHint(R.string.meter);
+            mass_edit.setHint(kilograms);
+            height_edit.setHint(meters);
         }
     }
 
@@ -249,7 +240,7 @@ public class MainActivity extends AppCompatActivity {
             float bmi = calculator.countBMI(Float.parseFloat(mass_edit.getText().toString())
                     ,Float.parseFloat(height_edit.getText().toString()));
             if(bmi < 18.5) {
-                value_text.setText(R.string.underweight_message);
+                value_text.setText(underweight);
                 if (bmi < 16) {
                     setColor(red);
                 } else if (bmi < 17) {
@@ -259,14 +250,14 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
             else if(bmi < 25) {
-                value_text.setText(R.string.normal_message);
+                value_text.setText(normal);
                 setColor(green);
             }
             else if(bmi < 30) {
-                value_text.setText(R.string.overweight_message);
+                value_text.setText(overweight);
                 setColor(yellow);}
             else{
-                value_text.setText(R.string.obesity_message);
+                value_text.setText(obesity);
                 if (bmi < 35) {
                     setColor(orange);
                 } else if (bmi < 40) {
